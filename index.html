@@ -36,7 +36,7 @@
 	const textureLoader = new THREE.TextureLoader;
 	
 	const camera = new THREE.PerspectiveCamera( 30, window.innerWidth / window.innerHeight, .1, 1e5);
-		camera.position.z = 2.5;
+		camera.position.z = 2;
 	
 	const renderer = new THREE.WebGLRenderer({ antialias: !1 });
 	renderer.setSize(window.innerWidth, window.innerHeight);
@@ -99,7 +99,6 @@
 							r.rotation.set(mRot.x, mRot.y, mRot.z);
 							r.castShadow = !0;
 							r.customDepthMaterial = n;
-							//r.scale.set(.3, .9, .9);
 						const o = new THREE.Mesh(e.geometry, a);
 							o.rotation.set(mRot.x, mRot.y, mRot.z);
 						scene.add(o, r);
