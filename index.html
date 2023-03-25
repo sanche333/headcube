@@ -35,8 +35,8 @@
 	const objLoader = new THREE.OBJLoader;
 	const textureLoader = new THREE.TextureLoader;
 	
-	const camera = new THREE.PerspectiveCamera( 30, window.innerWidth / window.innerHeight, .1, 1e5);
-		camera.position.z = 2;
+	const camera = new THREE.PerspectiveCamera( 20, window.innerWidth / window.innerHeight, .1, 1e5);
+		camera.position.z = 3;
 	
 	const renderer = new THREE.WebGLRenderer({ antialias: !1 });
 	renderer.setSize(window.innerWidth, window.innerHeight);
