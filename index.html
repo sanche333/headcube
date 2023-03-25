@@ -4,11 +4,20 @@
 		background-size: auto 100vh;
 		margin: 0
 	}
+	#wm {
+		width: 100px;;
+		image-rendering: pixelated;
+		position: absolute;
+		right: 10px;
+		bottom: 10px;
+		opacity: .5;
+	}
 </style>
 <script src="./three.min.js"></script>
 <script src="./OBJLoader.js"></script>
 
 <body></body>
+<img id="wm" src="wm.png">
 
 <script>
 	const urlParams = new URLSearchParams(window.location.search);
