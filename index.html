@@ -1,23 +1,25 @@
+
 <style>
 	body {
 		background-image: linear-gradient(to right top,#6b7bda,#6b7bda,#6b7bda,#6b7bda,#6b7bda,#847bd6,#977cd2,#a87dcd,#c582c2,#d88ab7,#e495af,#eaa3ab);
 		background-size: auto 100vh;
-		margin: 0
+		margin: 0;
 	}
 	#wm {
-		width: 140px;
+		width: 180px;
 		image-rendering: pixelated;
 		position: absolute;
-		left: 10px;
-		bottom: 10px;
-		opacity: .4;
+		right: 12px;
+		bottom: 12px;
+		opacity: .5;
 	}
 </style>
 <script src="./three.min.js"></script>
 <script src="./OBJLoader.js"></script>
 
-<body></body>
-<img id="wm" src="wm.png">
+<body>
+	<img id="wm" src="wm.png">
+</body>
 
 <script>
 	const urlParams = new URLSearchParams(window.location.search);
@@ -44,11 +46,11 @@
 	const objLoader = new THREE.OBJLoader;
 	const textureLoader = new THREE.TextureLoader;
 	
-	const camera = new THREE.PerspectiveCamera( 20, window.innerWidth / window.innerHeight, .1, 1e5);
-		camera.position.z = 3;
+	const camera = new THREE.PerspectiveCamera( 1, window.innerWidth / window.innerHeight, .1, 1e5);
+		camera.position.z = 60;
 	
 	const renderer = new THREE.WebGLRenderer({ antialias: !1 });
-	renderer.setSize(window.innerWidth, window.innerHeight);
+		renderer.setSize(window.innerWidth, window.innerHeight);
 		renderer.setClearColor(0, 0);
 		renderer.shadowMap.enabled = !0;
 		renderer.shadowMap.type = THREE.PCFSoftShadowMap;
