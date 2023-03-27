@@ -1,4 +1,3 @@
-
 <style>
 	body {
 		background-image: linear-gradient(to right top,#6b7bda,#6b7bda,#6b7bda,#6b7bda,#6b7bda,#847bd6,#977cd2,#a87dcd,#c582c2,#d88ab7,#e495af,#eaa3ab);
@@ -6,12 +5,12 @@
 		margin: 0;
 	}
 	#wm {
-		width: 170px;
+		width: 180px;
 		image-rendering: pixelated;
 		position: absolute;
-		right: 10px;
-		bottom: 10px;
-		opacity: .35;
+		right: 12px;
+		bottom: 12px;
+		opacity: .5;
 	}
 </style>
 <script src="./three.min.js"></script>
@@ -36,18 +35,14 @@
 		};
 	document.body.style["background-image"] = "linear-gradient(" + bgs[urlParams.get("bg")] + ")";
 	
-	const mRot = {
-			x: -.23,
-			y: .6,
-			z: .1
-		};
+	const mRot = [ -.3, .7, .1 ];
 	
 	const scene = new THREE.Scene;
 	const objLoader = new THREE.OBJLoader;
 	const textureLoader = new THREE.TextureLoader;
 	
-	const camera = new THREE.PerspectiveCamera( 1, window.innerWidth / window.innerHeight, .1, 1e5);
-		camera.position.z = 60;
+	const camera = new THREE.PerspectiveCamera( 20, window.innerWidth / window.innerHeight, .1, 1e5);
+		camera.position.z = 3.2;
 	
 	const renderer = new THREE.WebGLRenderer({ antialias: !1 });
 		renderer.setSize(window.innerWidth, window.innerHeight);
@@ -75,7 +70,7 @@
 					transparent: !0
 				});
 				const a = new THREE.Mesh(e.geometry, e.material);
-					a.rotation.set(mRot.x, mRot.y, mRot.z)
+					a.rotation.set(mRot[0], mRot[1], mRot[2])
 					a.scale.set(1.05, 1.05, 1.05)
 					a.castShadow = !0
 					a.receiveShadow = !0
@@ -107,11 +102,11 @@
 								alphaTest: .3
 							});
 						const r = new THREE.Mesh(e.geometry, t);
-							r.rotation.set(mRot.x, mRot.y, mRot.z);
+							r.rotation.set(mRot[0], mRot[1], mRot[2]);
 							r.castShadow = !0;
 							r.customDepthMaterial = n;
 						const o = new THREE.Mesh(e.geometry, a);
-							o.rotation.set(mRot.x, mRot.y, mRot.z);
+							o.rotation.set(mRot[0], mRot[1], mRot[2]);
 						scene.add(o, r);
 					}
 				})
